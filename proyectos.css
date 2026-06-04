@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0b14;
+    color: white;
+    position: relative;
+}
+body::before{
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #00f5a0;
+    filter: blur(150px);
+    opacity: 0.15;
+    top: -100px;
+    left: -100px;
+    z-index: -1;
+    pointer-events: none;
+}
+h2{
+    background: #00f5a0;
+    font-weight: bold;
+}
+.description{
+    opacity: 0.8;
+    line-height: 1.5;
+}
+a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #00f5a0;
+    color: #0b0b14;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background-color: #00d688;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 245, 160, 0.3);
+}
+
+a:focus {
+    outline: 2px solid #00f5a0;
+    outline-offset: 2px;
+}
+.proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.proyecto {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 245, 160, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.proyecto:hover {
+    border-color: #00f5a0;
+    background: rgba(0, 245, 160, 0.1);
+    transform: translateY(-5px);
+}
+.nombre {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #00f5a0, #00d688);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.description {
+    opacity: 0.8;
+    line-height: 1.6;
+    font-size: 14px;
+    margin: 15px 0;
+    color: #e0e0e0;
+}
+img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 245, 160, 0.3);
+}
+
+@media (max-width: 768px) {
+    .proyectos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 15px;
+    }
+    
+    body::before {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .nombre {
+        font-size: 20px;
+    }
+}
